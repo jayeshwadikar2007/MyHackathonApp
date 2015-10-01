@@ -1,0 +1,26 @@
+<table class = "table table-striped">
+<thead>
+	<th>Question ID</th>
+	<th>Text</th>
+</thead>
+
+<tbody>
+	<tr ng-repeat = "question in questions">
+		<tr>
+			<td>{{question.id}}</td>
+			<td>{{question.questionText}}</td>
+		</tr>
+		<tr>
+			a) <td>{{question.option1}}</td>
+			b) <td>{{question.option1}}</td>
+			c) <td>{{question.option1}}</td>
+			d) <td>{{question.option1}}</td>
+		</tr>
+		<tr>
+			Score <td>{question.score}}</td>
+		</tr>
+
+	</tr>
+</tbody>
+
+</table>
