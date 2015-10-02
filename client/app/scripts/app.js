@@ -65,7 +65,7 @@ angular
       })
       .when('/groups', {
         templateUrl: 'views/groups.html',
-        controller: 'GroupsCtrl',
+        controller: 'GroupCtrl',
         controllerAs: 'group'
       })
       .when('/rewards', {
@@ -77,6 +77,11 @@ angular
         templateUrl: 'views/submission.html',
         controller: 'SubmissionCtrl',
         controllerAs: 'submission'
+      })
+      .when('/result', {
+        templateUrl: 'views/result.html',
+        controller: 'ResultCtrl',
+        controllerAs: 'Result'
       })
       .otherwise({
         redirectTo: '/'
@@ -112,7 +117,18 @@ angular
       });
     });
   })
-  .factory('Submission', function (SubmissionRestangular) {
-    return SubmissionRestangular.service('submission');
+  .factory('Submission', function (GroupRestangular) {
+    return GroupRestangular.service('submission');
+  })
+  .factory('GroupRestangular', function (Restangular) {
+
+    return Restangular.withConfig(function (RestangularConfigurer) {
+      RestangularConfigurer.setRestangularFields({
+        id : '_id'
+      });
+    });
+  })
+  .factory('Group', function (GroupRestangular) {
+    return GroupRestangular.service('group');
   });
 

@@ -5,3 +5,15 @@
 	<th>Member Name</th>
 	<th>Member Email</th>	
 </thead>
+
+<tbody>
+	<tr ng-repeat = "group in groups">
+			<td>{{group.id}}</td>
+			<td>{{group.groupName}}</td>
+			<td>{{group.memberName}}</td>
+			<td>{{group.memberEmail}}</td>
+	</tr>
+</tbody>
+</table>
+
+<input type="submit" class="btn btn-primary" ng-click="addMember()" value="Add New Member"/>
