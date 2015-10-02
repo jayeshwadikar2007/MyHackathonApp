@@ -73,6 +73,11 @@ angular
         controller: 'RewardsCtrl',
         controllerAs: 'reward'
       })
+      .when('/submission', {
+        templateUrl: 'views/submission.html',
+        controller: 'SubmissionCtrl',
+        controllerAs: 'submission'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -98,5 +103,16 @@ angular
   })
   .factory('Question', function (QuestionRestangular) {
     return QuestionRestangular.service('question');
+  })
+  .factory('SubmissionRestangular', function (Restangular) {
+
+    return Restangular.withConfig(function (RestangularConfigurer) {
+      RestangularConfigurer.setRestangularFields({
+        id : '_id'
+      });
+    });
+  })
+  .factory('Submission', function (SubmissionRestangular) {
+    return SubmissionRestangular.service('submission');
   });
 

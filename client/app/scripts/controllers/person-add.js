@@ -8,14 +8,14 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-.controller('MovieAddCtrl', function (
+.controller('PersonAddCtrl', function (
   $scope,
   Person,
   $location
 ) {
   $scope.person = {};
-  $scope.savePerson = function() {
-    Movie.post($scope.person).then(function() {
+  $scope.savePerson = function($scope) {
+    Person.post($scope.person).then(function() {
       $location.path('/persons');
     });
   };

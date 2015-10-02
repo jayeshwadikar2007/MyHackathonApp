@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('GroupsCtrl', function () {
+  .controller('GroupsCtrl', function ($scope) {
     $scope.questions = 
     [
     	{
